@@ -14,7 +14,7 @@ npm run build    # production build
 
 All text lives in [`src/data/profile.ts`](src/data/profile.ts): bio, skills, experience, projects, education, achievements and social links. Edit it and the site updates.
 
-- **GitHub link** — set `profile.github` to your GitHub profile URL.
+- **GitHub link** — `profile.github` (currently github.com/pratik00git).
 - **Resume** — replace `public/Pratik-Thakkar-Resume.pdf` (keep the same filename).
 - **Photo (optional)** — the hero card shows your initials. To use a photo, add `public/profile.jpg` and swap the initials block in `src/components/Hero.tsx` for a `next/image`.
 
@@ -32,7 +32,7 @@ public/           resume PDF
 
 1. **Push to GitHub**
    ```bash
-   git remote add origin https://github.com/<your-username>/portfolio.git
+   git remote add origin https://github.com/pratik00git/portfolio.git
    git branch -M main
    git push -u origin main
    ```

@@ -11,8 +11,7 @@ export const profile = {
   phone: "+91 94273 52211",
   resume: "/Pratik-Thakkar-Resume.pdf",
   linkedin: "https://www.linkedin.com/in/pratik-thakkar-203004185/",
-  // TODO: replace with your GitHub profile URL
-  github: "https://github.com/",
+  github: "https://github.com/pratik00git",
   careerStart: new Date(2020, 11, 1), // Dec 2020
   about: [
     "I'm an innovative and meticulous software developer focused on crafting modern, high-quality user interfaces. Since starting my career in December 2020, I've shipped production web applications across e-commerce, hospitality, research and membership platforms.",
