@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pratik Thakkar — Portfolio
 
-## Getting Started
+Personal portfolio built with **Next.js 15 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4** and **Framer Motion**.
 
-First, run the development server:
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All text lives in [`src/data/profile.ts`](src/data/profile.ts): bio, skills, experience, projects, education, achievements and social links. Edit it and the site updates.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **GitHub link** — set `profile.github` to your GitHub profile URL.
+- **Resume** — replace `public/Pratik-Thakkar-Resume.pdf` (keep the same filename).
+- **Photo (optional)** — the hero card shows your initials. To use a photo, add `public/profile.jpg` and swap the initials block in `src/components/Hero.tsx` for a `next/image`.
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/            layout, page, global styles
+  components/     Navbar, Hero, Sections (About → Contact, Footer), ui helpers
+  data/profile.ts all portfolio content
+public/           resume PDF
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Push to GitHub**
+   ```bash
+   git remote add origin https://github.com/<your-username>/portfolio.git
+   git branch -M main
+   git push -u origin main
+   ```
+2. **Import to Vercel** — sign in at [vercel.com](https://vercel.com) with GitHub → *Add New… → Project* → pick the `portfolio` repo → *Deploy*. No settings needed (Next.js is auto-detected).
+3. **Custom domain (optional)** — in Vercel: *Project → Settings → Domains → Add*, then add the DNS records Vercel shows at your domain registrar.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every push to `main` redeploys automatically; pull requests get preview URLs.
