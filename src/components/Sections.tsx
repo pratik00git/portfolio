@@ -22,8 +22,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useState } from "react";
-import { achievements, education, experience, profile, projects, skillGroups, type SkillGroup, type SkillLevel } from "@/data/profile";
-import { Chip, fadeUp, GithubIcon, LinkedinIcon, Reveal, Section, stagger, yearsSince } from "./ui";
+import { achievements, education, experience, profile, projects, skillGroups, yearsSince, type SkillGroup, type SkillLevel } from "@/data/profile";
+import { Chip, fadeUp, GithubIcon, LinkedinIcon, Reveal, Section, stagger } from "./ui";
 
 const highlightIcons = [Smartphone, Code2, Zap, Sparkles];
 

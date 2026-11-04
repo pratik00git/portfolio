@@ -8,6 +8,17 @@ export const siteUrl = (
   (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
 ).replace(/\/$/, "");
 
+export function yearsSince(date: Date) {
+  return Math.floor((Date.now() - date.getTime()) / (365.25 * 24 * 3600 * 1000));
+}
+
+// Search engine ownership tokens. Set these in Vercel → Settings → Environment Variables
+// with the code each console gives you, then redeploy.
+export const siteVerification = {
+  google: process.env.GOOGLE_SITE_VERIFICATION,
+  bing: process.env.BING_SITE_VERIFICATION,
+};
+
 export const profile = {
   name: "Pratik Thakkar",
   initials: "PT",

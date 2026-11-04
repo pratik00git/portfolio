@@ -7,10 +7,6 @@ export function Providers({ children }: { children: ReactNode }) {
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
 
-export function yearsSince(date: Date) {
-  return Math.floor((Date.now() - date.getTime()) / (365.25 * 24 * 3600 * 1000));
-}
-
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },

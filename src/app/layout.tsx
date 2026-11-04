@@ -1,15 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "@/components/ui";
-import { profile, siteUrl } from "@/data/profile";
+import { profile, siteUrl, siteVerification, yearsSince } from "@/data/profile";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const jakarta = Plus_Jakarta_Sans({ variable: "--font-jakarta", subsets: ["latin"], weight: ["500", "600", "700", "800"] });
 
 const title = `${profile.name} — ${profile.role} | Next.js, React & AI`;
-const description =
-  "Pratik Thakkar is a Web Application Engineer from Anand, Gujarat with 5+ years building fast, responsive web apps using Next.js, React, Redux and TypeScript — including AI-powered features with Claude & OpenAI APIs. Available for frontend and web application roles.";
+const description = `Pratik Thakkar is a Web Application Engineer from Anand, Gujarat with ${yearsSince(profile.careerStart)}+ years building fast, responsive web apps using Next.js, React, Redux and TypeScript — including AI-powered features with Claude & OpenAI APIs. Available for frontend and web application roles.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -42,6 +41,11 @@ export const metadata: Metadata = {
   category: "technology",
   alternates: { canonical: "/" },
   formatDetection: { telephone: false, email: false, address: false },
+  referrer: "origin-when-cross-origin",
+  verification: {
+    google: siteVerification.google,
+    other: siteVerification.bing ? { "msvalidate.01": siteVerification.bing } : undefined,
+  },
   openGraph: {
     type: "profile",
     url: "/",
@@ -51,6 +55,8 @@ export const metadata: Metadata = {
     locale: "en_IN",
     firstName: "Pratik",
     lastName: "Thakkar",
+    username: "pratik00git",
+    countryName: "India",
   },
   twitter: {
     card: "summary_large_image",

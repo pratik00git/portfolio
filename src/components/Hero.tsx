@@ -2,9 +2,9 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Download, MapPin } from "lucide-react";
-import { profile, projects } from "@/data/profile";
+import { profile, projects, yearsSince } from "@/data/profile";
 import { useEffect, useState } from "react";
-import { fadeUp, GithubIcon, LinkedinIcon, stagger, yearsSince } from "./ui";
+import { fadeUp, GithubIcon, LinkedinIcon, stagger } from "./ui";
 
 function RotatingRole() {
   const [index, setIndex] = useState(0);
