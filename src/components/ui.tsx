@@ -7,6 +7,10 @@ export function Providers({ children }: { children: ReactNode }) {
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }
 
+export function yearsSince(date: Date) {
+  return Math.floor((Date.now() - date.getTime()) / (365.25 * 24 * 3600 * 1000));
+}
+
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
@@ -46,7 +50,7 @@ export function Section({
     <section id={id} className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 md:py-28">
       <Reveal className="mb-12 md:mb-16">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.25em] text-accent-2">{eyebrow}</p>
-        <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">{title}</h2>
+        <h2 className="font-display text-3xl font-bold tracking-tight text-fg sm:text-4xl md:text-5xl">{title}</h2>
       </Reveal>
       {children}
     </section>
@@ -55,7 +59,7 @@ export function Section({
 
 export function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex items-center rounded-full border border-line bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-300">
+    <span className="inline-flex items-center rounded-full border border-line bg-fg/[0.03] px-3 py-1 text-xs font-medium text-fg/80">
       {children}
     </span>
   );
